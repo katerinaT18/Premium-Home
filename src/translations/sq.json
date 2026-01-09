@@ -92,7 +92,7 @@
     "elevator": "Ashensor",
     "bathrooms": "Tualetet",
     "noImage": "Nuk ka imazh të disponueshëm",
-    "askAboutProperty": "Pyesni për këtë pronë",
+    "askAboutProperty": "Pyesni për këtë pronë"
   },
   "map": {
     "title": "Shiko Pronat në Hartë",
@@ -100,16 +100,7 @@
     "openInGoogleMaps": "Hap në Google Maps",
     "allProperties": "Të gjitha Pronat",
     "viewDetails": "Shiko Detajet",
-    "viewFirstProperty": "Shiko Pronën e Parë",
-    "askAboutProperty": "Pyesni për këtë pronë",
-    "contactDescription": "Të interesuar për këtë pronë? Plotësoni formularin e mëposhtëm dhe ekspertët tanë të pasurive të paluajtshme do t'ju kontaktojnë për më shumë detaje, duke përfshirë shoqërimin në pronë dhe përgjigjen e çdo pyetjeje që mund të keni.",
-    "firstName": "Emri",
-    "lastName": "Mbiemri",
-    "email": "Adrese Email",
-    "phone": "Numër Telefoni",
-    "message": "Mesazh",
-    "agreeTerms": "Jam dakord me Kushtet e Përdorimit dhe Politikën e Privatësisë",
-    "sendMessage": "Dërgoni Mesazhin Tuaj"
+    "viewFirstProperty": "Shiko Pronën e Parë"
   },
   "admin": {
     "login": {

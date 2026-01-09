@@ -92,7 +92,7 @@
     "elevator": "Elevator",
     "bathrooms": "Bathrooms",
     "noImage": "No Image Available",
-    "askAboutProperty": "Ask About This Property",
+    "askAboutProperty": "Ask About This Property"
   },
   "map": {
     "title": "View Properties on Map",
@@ -100,16 +100,7 @@
     "openInGoogleMaps": "Open in Google Maps",
     "allProperties": "All Properties",
     "viewDetails": "View Details",
-    "viewFirstProperty": "View First Property",
-    "askAboutProperty": "Ask About This Property",
-    "contactDescription": "Interested in this property? Fill out the form below and our real estate experts will contact you with more details, including property tours and answers to any questions you may have.",
-    "firstName": "First Name",
-    "lastName": "Last Name",
-    "email": "Email Address",
-    "phone": "Phone Number",
-    "message": "Message",
-    "agreeTerms": "I agree to the Terms of Use and Privacy Policy",
-    "sendMessage": "Send Your Message"
+    "viewFirstProperty": "View First Property"
   },
   "admin": {
     "login": {
