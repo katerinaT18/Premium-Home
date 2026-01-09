@@ -1,0 +1,18 @@
+.App {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.App main {
+  flex: 1;
+}
+
+/* Apply theme to body when theme changes */
+body.light {
+  color-scheme: light;
+}
+
+body.dark {
+  color-scheme: dark;
+}

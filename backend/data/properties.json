@@ -1,0 +1,58 @@
+[
+  {
+    "title": "Luxury Apartment in City Center",
+    "location": "Tirana, Albania",
+    "address": "Blloku, Tirana",
+    "price": 165000,
+    "currency": "EUR",
+    "area": 88,
+    "bedrooms": 2,
+    "bathrooms": 1,
+    "floor": null,
+    "furnished": false,
+    "elevator": true,
+    "propertyType": "apartment",
+    "transactionType": "sale",
+    "description": "Beautiful modern apartment in the heart of Tirana",
+    "featured": true,
+    "images": [
+      "https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?w=800",
+      "https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?w=800"
+    ],
+    "id": 1
+  },
+  {
+    "id": 2,
+    "title": "Modern Villa with Sea View",
+    "location": "Vlorë, Albania",
+    "address": "Lungomare, Vlorë",
+    "price": 450,
+    "currency": "EUR",
+    "area": 100,
+    "bedrooms": 2,
+    "bathrooms": 2,
+    "propertyType": "apartment",
+    "transactionType": "rent",
+    "images": [
+      "https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=800"
+    ],
+    "description": "Stunning apartment with panoramic sea views",
+    "featured": true
+  },
+  {
+    "title": "Apartment",
+    "location": "Tirana, Albania",
+    "address": "Kompleksi Mangalem21 Ali Demi Tirane",
+    "price": 135000,
+    "currency": "EUR",
+    "area": 76,
+    "bedrooms": 2,
+    "bathrooms": 1,
+    "propertyType": "apartment",
+    "transactionType": "sale",
+    "description": "",
+    "featured": false,
+    "images": [],
+    "id": 3
+  }
+]
