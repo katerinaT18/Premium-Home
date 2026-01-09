@@ -64,7 +64,7 @@ const PropertyDetails = ({ property }) => {
             <button className="btn-secondary" onClick={() => window.print()}>
               {t('propertyDetails.save')}
             </button>
-            <button className="btn-secondary" onClick={() => navigate('/')}>
+            <button className="btn-secondary" onClick={() => navigate(`/map?propertyId=${id}`)}>
               {t('propertyDetails.viewOnMap')}
             </button>
           </div>
