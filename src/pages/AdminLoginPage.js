@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, Link } from 'react-router-dom';
 import { loginStart } from '../store/slices/authSlice';
 import { useTranslation } from '../utils/translations';
 import './AdminLoginPage.css';
@@ -95,11 +95,17 @@ const AdminLoginPage = () => {
           </form>
 
           <div className="admin-login-footer">
+            <p>
+              {t('admin.login.noAccount') || "Don't have an account?"}{' '}
+              <Link to="/admin/register" className="register-link">
+                {t('admin.login.registerLink') || 'Register here'}
+              </Link>
+            </p>
             <button
               onClick={() => navigate('/')}
               className="back-to-home"
             >
-              ← {t('admin.login.backToHome')}
+              ← {t('admin.login.backToHome') || 'Back to Home'}
             </button>
           </div>
         </div>

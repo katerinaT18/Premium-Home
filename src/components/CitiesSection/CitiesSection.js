@@ -1,10 +1,16 @@
 import React from 'react';
-import { cities } from '../../data/sampleProperties';
+import { useSelector } from 'react-redux';
 import { useTranslation } from '../../utils/translations';
 import './CitiesSection.css';
 
 const CitiesSection = () => {
   const { t } = useTranslation();
+  const selectedCity = useSelector((state) => state.filters.city);
+
+  const currentCity =
+    !selectedCity || selectedCity === 'all' ? 'Tirana' : selectedCity;
+
+  const mapQuery = encodeURIComponent(`${currentCity}, Albania`);
 
   return (
     <section className="cities-section">
@@ -15,15 +21,17 @@ const CitiesSection = () => {
         <p className="section-subtitle">
           {t('cities.subtitle')}
         </p>
-        <div className="cities-grid">
-          {cities.map((city, index) => (
-            <div key={index} className="city-card">
-              <h3>{city.name}</h3>
-              <p className="city-count">
-                {city.count}+ {t('cities.properties')}
-              </p>
-            </div>
-          ))}
+        <div className="cities-map-wrapper">
+          <iframe
+            title="Cities Map"
+            width="100%"
+            height="100%"
+            style={{ border: 0 }}
+            src={`https://www.google.com/maps?q=${mapQuery}&output=embed`}
+            loading="lazy"
+            allowFullScreen
+            referrerPolicy="no-referrer-when-downgrade"
+          />
         </div>
       </div>
     </section>

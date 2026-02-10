@@ -7,9 +7,10 @@ require('dotenv').config();
 const propertiesRoutes = require('./routes/properties');
 const authRoutes = require('./routes/auth');
 const uploadRoutes = require('./routes/upload');
+const agentsRoutes = require('./routes/agents');
 
 const app = express();
-const PORT = process.env.PORT || 5000;
+const PORT = process.env.PORT || 5001;
 
 // Middleware
 app.use(cors());
@@ -29,6 +30,7 @@ app.get('/api', (req, res) => {
       health: '/api/health',
       auth: {
         login: 'POST /api/auth/login',
+        register: 'POST /api/auth/register',
         verify: 'GET /api/auth/verify'
       },
       properties: {
@@ -37,6 +39,13 @@ app.get('/api', (req, res) => {
         create: 'POST /api/properties (requires auth)',
         update: 'PUT /api/properties/:id (requires auth)',
         delete: 'DELETE /api/properties/:id (requires auth)'
+      },
+      agents: {
+        getAll: 'GET /api/agents',
+        getById: 'GET /api/agents/:id',
+        create: 'POST /api/agents (requires auth)',
+        update: 'PUT /api/agents/:id (requires auth)',
+        delete: 'DELETE /api/agents/:id (requires auth)'
       },
       upload: {
         single: 'POST /api/upload/image (requires auth)',
@@ -50,6 +59,7 @@ app.get('/api', (req, res) => {
 app.use('/api/auth', authRoutes);
 app.use('/api/properties', propertiesRoutes);
 app.use('/api/upload', uploadRoutes);
+app.use('/api/agents', agentsRoutes);
 
 // Health check
 app.get('/api/health', (req, res) => {

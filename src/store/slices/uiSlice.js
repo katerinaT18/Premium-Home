@@ -2,7 +2,7 @@ import { createSlice } from '@reduxjs/toolkit';
 
 const initialState = {
   theme: 'light', // light, dark
-  language: 'en', // en, sq
+  language: 'sq', // en, sq (Albanian is default)
   isMenuOpen: false,
   isSearchModalOpen: false,
 };

@@ -49,25 +49,33 @@ const AdminDashboardPage = () => {
   };
 
   const handleDeleteProperty = (propertyId) => {
-    if (window.confirm(t('admin.form.confirmDelete'))) {
+    if (window.confirm(t('confirm Delete'))) {
       dispatch(deletePropertyStart(propertyId));
     }
   };
 
   const handleSaveProperty = async (propertyData) => {
     try {
+      // Attach current agentId to the property so it can be linked to this agent
+      const dataWithAgent = {
+        ...propertyData,
+      };
+      if (user && user.agentId && !dataWithAgent.agentId) {
+        dataWithAgent.agentId = user.agentId;
+      }
+
       if (editingProperty) {
         // Update existing property
-        dispatch(updatePropertyStart(propertyData));
+        dispatch(updatePropertyStart(dataWithAgent));
       } else {
         // Add new property
-        dispatch(createPropertyStart(propertyData));
+        dispatch(createPropertyStart(dataWithAgent));
       }
       setIsModalOpen(false);
       setEditingProperty(null);
     } catch (error) {
       console.error('Error saving property:', error);
-      alert(t('admin.form.saveError') || 'Failed to save property');
+      alert(t('aveError') || 'Failed to save property');
     }
   };
 
@@ -81,10 +89,10 @@ const AdminDashboardPage = () => {
         <div className="container">
           <div className="admin-header-content">
             <div>
-              <h1>{t('admin.dashboard.welcome')} Admin</h1>
+              <h1>{t('Welcome')} Admin</h1>
             </div>
             <button onClick={handleLogout} className="logout-button">
-              {t('admin.dashboard.logout')}
+              {t('Logout')}
             </button>
           </div>
         </div>
@@ -94,24 +102,24 @@ const AdminDashboardPage = () => {
         <div className="container">
           <div className="admin-stats">
             <div className="stat-card">
-              <h3>{t('admin.dashboard.totalProperties')}</h3>
+              <h3>{t('Total Properties')}</h3>
               <p className="stat-number">{properties.length}</p>
             </div>
             <div className="stat-card">
-              <h3>{t('admin.dashboard.activeListings')}</h3>
+              <h3>{t('ActiveListings')}</h3>
               <p className="stat-number">{properties.filter(p => !p.featured).length}</p>
             </div>
             <div className="stat-card">
-              <h3>{t('admin.dashboard.featuredProperties')}</h3>
+              <h3>{t('Featured Properties')}</h3>
               <p className="stat-number">{properties.filter(p => p.featured).length}</p>
             </div>
           </div>
 
           <div className="admin-section">
             <div className="section-header">
-              <h2>{t('admin.dashboard.propertiesManagement')}</h2>
+              <h2>{t('PropertiesManagement')}</h2>
               <button onClick={handleAddProperty} className="add-property-button">
-                + {t('admin.dashboard.addProperty')}
+                + {t('AddProperty')}
               </button>
             </div>
             <div className="properties-table">
@@ -141,13 +149,13 @@ const AdminDashboardPage = () => {
                           className="action-button edit"
                           onClick={() => handleEditProperty(property)}
                         >
-                          {t('admin.dashboard.edit')}
+                          {t('Edit')}
                         </button>
                         <button
                           className="action-button delete"
                           onClick={() => handleDeleteProperty(property.id)}
                         >
-                          {t('admin.dashboard.delete')}
+                          {t('Delete')}
                         </button>
                       </td>
                     </tr>

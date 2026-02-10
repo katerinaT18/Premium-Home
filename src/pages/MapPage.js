@@ -12,7 +12,6 @@ const MapPage = () => {
   const { t } = useTranslation();
   const mapRef = useRef(null);
   const [selectedProperty, setSelectedProperty] = useState(null);
-  const [mapLoaded, setMapLoaded] = useState(false);
 
   const propertyId = searchParams.get('propertyId');
   const highlightedProperty = propertyId 
@@ -66,7 +65,7 @@ const MapPage = () => {
                     allowFullScreen
                     loading="lazy"
                     referrerPolicy="no-referrer-when-downgrade"
-                    onLoad={() => setMapLoaded(true)}
+                    onLoad={() => {}}
                   />
                 </div>
                 <div className="map-actions">

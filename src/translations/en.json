@@ -165,5 +165,39 @@
       "confirmDelete": "Are you sure you want to delete this property?",
       "saveError": "Failed to save property. Please try again."
     }
+  },
+  "aboutUs": {
+    "title": "About Us",
+    "subtitle": "Premium Homes Real Estate",
+    "paragraph1": "At Premium Homes Real Estate, we believe that finding the right home is more than a transaction — it's a life decision. Built on integrity, expertise, and a deep understanding of the property market, we are dedicated to helping our clients buy, sell, and invest with confidence.",
+    "paragraph2": "With a focus on quality homes and premium properties, our team combines local market knowledge with personalized service to deliver exceptional results. Whether you are searching for your dream home, selling a valued property, or exploring investment opportunities, we take the time to understand your goals and guide you every step of the way.",
+    "paragraph3": "What sets Premium Homes Real Estate apart is our commitment to transparency, professionalism, and long-term relationships. We pride ourselves on clear communication, honest advice, and tailored solutions designed around your unique needs.",
+    "paragraph4": "From first-time buyers to seasoned investors, our mission is simple: to make your real estate journey seamless, rewarding, and successful. At Premium Homes Real Estate, your future begins with the right home."
+  },
+  "agents": {
+    "title": "Agents",
+    "subtitle": "Find your ideal agent",
+    "findAgent": "Find Agent",
+    "searchPlaceholder": "Search by name or title...",
+    "city": "City",
+    "allCities": "All Cities",
+    "agentsFound": "agents found",
+    "properties": "Properties",
+    "viewProperties": "View Properties",
+    "agentProperties": "Properties by",
+    "noProperties": "This agent has no properties listed yet.",
+    "notFound": "Agent not found",
+    "backToAgents": "Back to Agents",
+    "listing": "Listing",
+    "contact": "Contact",
+    "sendMessage": "Send message",
+    "phone": "Phone",
+    "email": "Email",
+    "emailAgent": "Email agent",
+    "featuredProperties": "Featured Properties",
+    "categories": "Properties by categories",
+    "recentlyViewed": "Recently Viewed",
+    "noFeatured": "No featured properties yet.",
+    "noRecent": "No recently viewed properties yet."
   }
 }

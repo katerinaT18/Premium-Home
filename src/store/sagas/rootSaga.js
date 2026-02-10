@@ -5,7 +5,7 @@ import {
   watchUpdateProperty,
   watchDeleteProperty,
 } from './propertyActionsSaga';
-import { watchLogin, watchCheckAuth } from './authSaga';
+import { watchLogin, watchRegister, watchCheckAuth } from './authSaga';
 
 // Root saga that combines all sagas
 export default function* rootSaga() {
@@ -15,6 +15,7 @@ export default function* rootSaga() {
     watchUpdateProperty(),
     watchDeleteProperty(),
     watchLogin(),
+    watchRegister(),
     watchCheckAuth(),
   ]);
 }

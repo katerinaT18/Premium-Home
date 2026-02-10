@@ -165,5 +165,39 @@
       "confirmDelete": "Jeni të sigurt që dëshironi të fshini këtë pronë?",
       "saveError": "Dështoi ruajtja e pronës. Ju lutemi provoni përsëri."
     }
+  },
+  "aboutUs": {
+    "title": "Rreth Nesh",
+    "subtitle": "Premium Homes Real Estate",
+    "paragraph1": "Në Premium Homes Real Estate, ne besojmë se gjetja e shtëpisë së duhur është më shumë se një transaksion — është një vendim jetësor. E ndërtuar mbi integritet, ekspertizë dhe një kuptim të thellë të tregut të pasurive të paluajtshme, ne jemi të dedikuar për të ndihmuar klientët tanë të blejnë, shesin dhe investojnë me besim.",
+    "paragraph2": "Me një fokus në shtëpi cilësore dhe prona premium, ekipi ynë kombinon njohuritë e tregut lokal me shërbim të personalizuar për të ofruar rezultate të jashtëzakonshme. Pavarësisht nëse jeni duke kërkuar shtëpinë tuaj të ëndrrave, duke shitur një pronë me vlerë, ose duke eksploruar mundësi investimi, ne kemi kohë për të kuptuar objektivat tuaja dhe t'ju udhëheqim në çdo hap.",
+    "paragraph3": "Ajo që e bën Premium Homes Real Estate të veçantë është angazhimi ynë për transparencë, profesionalizëm dhe marrëdhënie afatgjata. Ne jemi krenarë me komunikimin e qartë, këshillën e sinqertë dhe zgjidhjet e personalizuara të dizajnuara rreth nevojave tuaja unike.",
+    "paragraph4": "Nga blerësit e hershëm deri te investitorët me përvojë, misioni ynë është i thjeshtë: të bëjmë udhëtimin tuaj të pasurive të paluajtshme të qetë, shpërblues dhe të suksesshëm. Në Premium Homes Real Estate, e ardhmja juaj fillon me shtëpinë e duhur."
+  },
+  "agents": {
+    "title": "Agjentët",
+    "subtitle": "Gjeni agjentin tuaj ideal",
+    "findAgent": "Gjej Agjent",
+    "searchPlaceholder": "Kërko sipas emrit ose titullit...",
+    "city": "Qyteti",
+    "allCities": "Të gjitha qytetet",
+    "agentsFound": "agjentë u gjetën",
+    "properties": "Prona",
+    "viewProperties": "Shiko Pronat",
+    "agentProperties": "Pronat nga",
+    "noProperties": "Ky agjent nuk ka prona të listuara ende.",
+    "notFound": "Agjenti nuk u gjet",
+    "backToAgents": "Kthehu te Agjentët",
+    "listing": "Listing",
+    "contact": "Kontakt",
+    "sendMessage": "Dërgo mesazhin",
+    "phone": "Telefon",
+    "email": "Email",
+    "emailAgent": "Dërgo email",
+    "featuredProperties": "Prona të Përzgjedhura",
+    "categories": "Prona sipas kategorive",
+    "recentlyViewed": "Recently Viewed",
+    "noFeatured": "Nuk ka prona të përzgjedhura ende.",
+    "noRecent": "Nuk ka prona të shikuara së fundmi."
   }
 }

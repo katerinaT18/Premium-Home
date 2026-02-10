@@ -71,6 +71,28 @@ const authSlice = createSlice({
         localStorage.removeItem('adminAuth');
       }
     },
+    registerStart: (state) => {
+      state.loading = true;
+      state.error = null;
+    },
+    registerSuccess: (state, action) => {
+      state.loading = false;
+      state.isAuthenticated = true;
+      state.user = action.payload;
+      state.error = null;
+      // Store auth in localStorage with token
+      localStorage.setItem('adminAuth', JSON.stringify({
+        isAuthenticated: true,
+        user: action.payload,
+        token: action.payload.token,
+      }));
+    },
+    registerFailure: (state, action) => {
+      state.loading = false;
+      state.isAuthenticated = false;
+      state.user = null;
+      state.error = action.payload;
+    },
   },
 });
 
@@ -81,6 +103,9 @@ export const {
   logout,
   checkAuth,
   setAuthVerified,
+  registerStart,
+  registerSuccess,
+  registerFailure,
 } = authSlice.actions;
 
 export default authSlice.reducer;

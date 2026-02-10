@@ -1,4 +1,4 @@
-.admin-login-page {
+.admin-register-page {
   min-height: 100vh;
   display: flex;
   align-items: center;
@@ -7,12 +7,12 @@
   padding: 2rem;
 }
 
-.admin-login-container {
+.admin-register-container {
   width: 100%;
-  max-width: 450px;
+  max-width: 600px;
 }
 
-.admin-login-card {
+.admin-register-card {
   background: var(--bg-secondary);
   border-radius: 16px;
   padding: 3rem;
@@ -20,7 +20,7 @@
   border: 2px solid var(--border-color);
 }
 
-.admin-login-header {
+.admin-register-header {
   text-align: center;
   margin-bottom: 2.5rem;
 }
@@ -35,32 +35,47 @@
   margin: 0 0 1rem 0;
 }
 
-.admin-login-header h2 {
+.admin-register-header h2 {
   font-size: 1.8rem;
   color: var(--text-primary);
   margin: 0 0 0.5rem 0;
 }
 
-.admin-login-header p {
+.admin-register-header p {
   color: var(--text-secondary);
   font-size: 0.95rem;
   margin: 0;
 }
 
-.admin-login-form {
+.admin-register-form {
   display: flex;
   flex-direction: column;
   gap: 1.5rem;
 }
 
-.error-message {
-  padding: 1rem;
-  background: rgba(220, 53, 69, 0.1);
-  border: 2px solid rgba(220, 53, 69, 0.3);
-  border-radius: 8px;
-  color: #dc3545;
-  font-size: 0.9rem;
-  text-align: center;
+.form-section {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  padding: 1.5rem 0;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.form-section:last-of-type {
+  border-bottom: none;
+}
+
+.form-section-title {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin: 0 0 0.5rem 0;
+}
+
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
 }
 
 .form-group {
@@ -75,7 +90,8 @@
   font-size: 0.95rem;
 }
 
-.form-group input {
+.form-group input,
+.form-group select {
   padding: 0.875rem;
   border: 2px solid var(--border-color);
   border-radius: 8px;
@@ -85,13 +101,35 @@
   transition: all 0.2s;
 }
 
-.form-group input:focus {
+.form-group input:focus,
+.form-group select:focus {
   outline: none;
   border-color: var(--primary-color);
   box-shadow: 0 0 0 3px rgba(212, 175, 55, 0.1);
 }
 
-.admin-login-button {
+.form-group input.error,
+.form-group select.error {
+  border-color: #dc3545;
+}
+
+.field-error {
+  color: #dc3545;
+  font-size: 0.85rem;
+  margin-top: -0.25rem;
+}
+
+.error-message {
+  padding: 1rem;
+  background: rgba(220, 53, 69, 0.1);
+  border: 2px solid rgba(220, 53, 69, 0.3);
+  border-radius: 8px;
+  color: #dc3545;
+  font-size: 0.9rem;
+  text-align: center;
+}
+
+.admin-register-button {
   padding: 1rem;
   background: var(--primary-color);
   color: #000000;
@@ -104,18 +142,18 @@
   margin-top: 0.5rem;
 }
 
-.admin-login-button:hover:not(:disabled) {
+.admin-register-button:hover:not(:disabled) {
   background: var(--secondary-color);
   transform: translateY(-2px);
   box-shadow: 0 4px 12px rgba(212, 175, 55, 0.3);
 }
 
-.admin-login-button:disabled {
+.admin-register-button:disabled {
   opacity: 0.6;
   cursor: not-allowed;
 }
 
-.admin-login-footer {
+.admin-register-footer {
   margin-top: 2rem;
   text-align: center;
   display: flex;
@@ -123,20 +161,20 @@
   gap: 1rem;
 }
 
-.admin-login-footer p {
+.admin-register-footer p {
   color: var(--text-secondary);
   font-size: 0.9rem;
   margin: 0;
 }
 
-.register-link {
+.login-link {
   color: var(--primary-color);
   text-decoration: none;
   font-weight: 600;
   transition: color 0.2s;
 }
 
-.register-link:hover {
+.login-link:hover {
   color: var(--secondary-color);
   text-decoration: underline;
 }
@@ -156,7 +194,7 @@
 }
 
 @media (max-width: 768px) {
-  .admin-login-card {
+  .admin-register-card {
     padding: 2rem;
   }
 
@@ -164,7 +202,15 @@
     font-size: 2rem;
   }
 
-  .admin-login-header h2 {
+  .admin-register-header h2 {
     font-size: 1.5rem;
+  }
+
+  .form-row {
+    grid-template-columns: 1fr;
+  }
+
+  .form-section {
+    padding: 1rem 0;
   }
 }

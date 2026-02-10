@@ -27,7 +27,7 @@ const apiRequest = async (endpoint, options = {}) => {
     ...options.headers,
   };
 
-  if (token && !endpoint.includes('/auth/login')) {
+  if (token && !endpoint.includes('/auth/login') && !endpoint.includes('/auth/register')) {
     headers['Authorization'] = `Bearer ${token}`;
   }
 
@@ -38,8 +38,17 @@ const apiRequest = async (endpoint, options = {}) => {
     });
 
     if (!response.ok) {
-      const error = await response.json().catch(() => ({ error: 'Request failed' }));
-      throw new Error(error.error || error.message || `HTTP error! status: ${response.status}`);
+      let errorData;
+      try {
+        errorData = await response.json();
+      } catch (e) {
+        // If response is not JSON, create a meaningful error
+        errorData = { 
+          error: `Server error: ${response.status} ${response.statusText}`,
+          message: `The server returned an error (${response.status}). Please check if the backend is running correctly.`
+        };
+      }
+      throw new Error(errorData.error || errorData.message || `HTTP error! status: ${response.status}`);
     }
 
     return response.json();
@@ -61,6 +70,13 @@ export const authAPI = {
     return apiRequest('/auth/login', {
       method: 'POST',
       body: JSON.stringify({ username, password }),
+    });
+  },
+
+  register: async (username, password, agentData = {}) => {
+    return apiRequest('/auth/register', {
+      method: 'POST',
+      body: JSON.stringify({ username, password, ...agentData }),
     });
   },
 
@@ -97,6 +113,45 @@ export const propertiesAPI = {
 
   delete: async (id) => {
     return apiRequest(`/properties/${id}`, {
+      method: 'DELETE',
+    });
+  },
+};
+
+/**
+ * Agents API
+ */
+export const agentsAPI = {
+  getAll: async () => {
+    try {
+      return await apiRequest('/agents');
+    } catch (error) {
+      console.error('Agents API error:', error);
+      // Return empty array on error instead of throwing
+      return [];
+    }
+  },
+
+  getById: async (id) => {
+    return apiRequest(`/agents/${id}`);
+  },
+
+  create: async (agentData) => {
+    return apiRequest('/agents', {
+      method: 'POST',
+      body: JSON.stringify(agentData),
+    });
+  },
+
+  update: async (id, agentData) => {
+    return apiRequest(`/agents/${id}`, {
+      method: 'PUT',
+      body: JSON.stringify(agentData),
+    });
+  },
+
+  delete: async (id) => {
+    return apiRequest(`/agents/${id}`, {
       method: 'DELETE',
     });
   },

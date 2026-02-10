@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { useSelector } from 'react-redux';
 import { formatPrice } from '../../utils/propertyHelpers';
 import { useTranslation } from '../../utils/translations';
 import './PropertyDetails.css';

@@ -1,0 +1,50 @@
+[
+  {
+    "id": "agent1",
+    "name": "Agent1",
+    "title": "Real Estate Agent",
+    "email": "agent1@premiumhomes.al",
+    "mobile": "+355 69 000 0001",
+    "city": "Tirana",
+    "image": "/agent1.jpg",
+    "propertiesCount": 0,
+    "createdAt": "2026-02-10T09:08:58.727Z",
+    "updatedAt": "2026-02-10T09:08:58.728Z"
+  },
+  {
+    "id": "agent2",
+    "name": "Agent2",
+    "title": "Real Estate Agent",
+    "email": "agent2@premiumhomes.al",
+    "mobile": "+355 69 000 0002",
+    "city": "Tirana",
+    "image": "/agent2.jpg",
+    "propertiesCount": 0,
+    "createdAt": "2026-02-10T09:08:58.728Z",
+    "updatedAt": "2026-02-10T09:08:58.728Z"
+  },
+  {
+    "id": "agent3",
+    "name": "Agent3",
+    "title": "Real Estate Agent",
+    "email": "agent3@premiumhomes.al",
+    "mobile": "+355 69 000 0003",
+    "city": "Tirana",
+    "image": "/agent3.jpg",
+    "propertiesCount": 0,
+    "createdAt": "2026-02-10T09:08:58.728Z",
+    "updatedAt": "2026-02-10T09:08:58.728Z"
+  },
+  {
+    "id": "agent4",
+    "name": "Agent4",
+    "title": "Real Estate Agent",
+    "email": "agent4@premiumhomes.al",
+    "mobile": "+355 69 000 0004",
+    "city": "Tirana",
+    "image": "/agent4.jpg",
+    "propertiesCount": 0,
+    "createdAt": "2026-02-10T09:08:58.728Z",
+    "updatedAt": "2026-02-10T09:08:58.728Z"
+  }
+]

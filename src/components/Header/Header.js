@@ -14,14 +14,47 @@ const Header = () => {
   const menuItems = [
     { label: t('header.home'), path: '/' },
     { label: t('header.properties'), path: '/properties' },
+    { label: t('header.agents'), path: '/agents' },
     { label: t('header.aboutUs'), path: '/about' },
   ];
 
   return (
     <header className={`header ${theme}`}>
-      <div className="header-top">
-        <div className="container">
-          <div className="header-top-content">
+      <div className="container">
+        <div className="header-content">
+          <Link to="/" className="logo">
+            <img 
+              src={`${process.env.PUBLIC_URL || ''}/logo.jpeg`}
+              alt="Premium Homes" 
+              className="logo-image"
+              onError={(e) => {
+                e.target.style.display = 'none';
+                if (e.target.nextSibling) {
+                  e.target.nextSibling.style.display = 'block';
+                }
+              }}
+            />
+            <h1 className="logo-text">Premium Homes</h1>
+          </Link>
+          <nav className={`nav ${isMenuOpen ? 'open' : ''}`}>
+            <ul className="nav-list">
+              {menuItems.map((item, index) => (
+                <li key={index}>
+                  <Link to={item.path} onClick={() => dispatch(closeMenu())}>
+                    {item.label}
+                  </Link>
+                </li>
+              ))}
+              {isAuthenticated && (
+                <li>
+                  <Link to="/admin/dashboard" onClick={() => dispatch(closeMenu())} className="nav-admin-link">
+                    {t('header.dashboard')}
+                  </Link>
+                </li>
+              )}
+            </ul>
+          </nav>
+          <div className="header-right">
             <div className="header-contact">
               <span className="phone-icon">📞</span>
               <span>+355 69 304 0629</span>
@@ -54,33 +87,6 @@ const Header = () => {
                 {theme === 'light' ? '🌙' : '☀️'}
               </button>
             </div>
-          </div>
-        </div>
-      </div>
-      <div className="header-main">
-        <div className="container">
-          <div className="header-content">
-            <div className="logo">
-              <h1>Premium Homes</h1>
-            </div>
-            <nav className={`nav ${isMenuOpen ? 'open' : ''}`}>
-              <ul className="nav-list">
-                {menuItems.map((item, index) => (
-                  <li key={index}>
-                    <Link to={item.path} onClick={() => dispatch(closeMenu())}>
-                      {item.label}
-                    </Link>
-                  </li>
-                ))}
-                {isAuthenticated && (
-                  <li>
-                    <Link to="/admin/dashboard" onClick={() => dispatch(closeMenu())} className="nav-admin-link">
-                      {t('header.dashboard')}
-                    </Link>
-                  </li>
-                )}
-              </ul>
-            </nav>
             <button
               className="menu-toggle"
               onClick={() => dispatch(toggleMenu())}

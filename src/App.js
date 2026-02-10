@@ -10,14 +10,17 @@ import HomePage from './pages/HomePage';
 import PropertiesPage from './pages/PropertiesPage';
 import PropertyDetailsPage from './pages/PropertyDetailsPage';
 import MapPage from './pages/MapPage';
+import AgentsPage from './pages/AgentsPage';
+import AgentDetailsPage from './pages/AgentDetailsPage';
+import AboutUsPage from './pages/AboutUsPage';
 import AdminLoginPage from './pages/AdminLoginPage';
+import AdminRegisterPage from './pages/AdminRegisterPage';
 import AdminDashboardPage from './pages/AdminDashboardPage';
 import './App.css';
 
 function App() {
   const dispatch = useDispatch();
   const { theme } = useSelector((state) => state.ui);
-  const { isAuthenticated } = useSelector((state) => state.auth);
 
   useEffect(() => {
     // Check authentication on app load (will trigger saga to verify token)
@@ -32,16 +35,23 @@ function App() {
     document.documentElement.setAttribute('data-theme', theme);
   }, [theme]);
 
+  const isAdminPage = window.location.pathname.startsWith('/admin/login') || 
+                      window.location.pathname.startsWith('/admin/register');
+
   return (
     <div className="App">
-      {!window.location.pathname.startsWith('/admin/login') && <Header />}
+      {!isAdminPage && <Header />}
       <main>
         <Routes>
           <Route path="/" element={<HomePage />} />
           <Route path="/properties" element={<PropertiesPage />} />
           <Route path="/property/:id" element={<PropertyDetailsPage />} />
           <Route path="/map" element={<MapPage />} />
+          <Route path="/agents" element={<AgentsPage />} />
+          <Route path="/agent/:id" element={<AgentDetailsPage />} />
+          <Route path="/about" element={<AboutUsPage />} />
           <Route path="/admin/login" element={<AdminLoginPage />} />
+          <Route path="/admin/register" element={<AdminRegisterPage />} />
           <Route
             path="/admin/dashboard"
             element={
@@ -52,7 +62,7 @@ function App() {
           />
         </Routes>
       </main>
-      {!window.location.pathname.startsWith('/admin/login') && <Footer />}
+      {!isAdminPage && <Footer />}
     </div>
   );
 }
